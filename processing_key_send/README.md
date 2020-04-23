@@ -1,9 +1,13 @@
 ﻿# Processing Key Send
 
 **Setup**
- - Download Processing: [https://processing.org/download/](https://processing.org/download/)
- - Download 'processing_key_send' sketch from this repo.
- - Open sketch in processing and click Run (play button).
+ - Download  & Install Processing: [https://processing.org/download/](https://processing.org/download/)
+ - Open Processing,
+ - Navigate to 'Sketch>Import Library> Add Library'.
+ - Search for 'MQTT'.
+ - Select Library (Author 'Joel Gaehwiler') and click Install.
+ - Paste Sketch into Processing '[processing_key_send.pde]' (https://github.com/josephlyons/maze-shiftrio/blob/master/processing_key_send/processing_key_send.pde 
+ - Click Run (play button).
 
 **Control**
 

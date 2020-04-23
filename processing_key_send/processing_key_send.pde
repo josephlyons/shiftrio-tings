@@ -6,6 +6,9 @@ void setup() {
   size(360, 360); 
   client = new MQTTClient(this);
   client.connect("mqtt://90a85098:a7fed12984960679@broker.shiftr.io", "processing");
+  
+    client.publish("/eyebrows", "0");
+    background(0, 0, 250);
 }
 
 void draw() 
@@ -27,6 +30,9 @@ void keyPressed()
     } else if (key == '3') {
       client.publish("/eyebrows", "0");
       background(0, 0, 250);
+    rect(130, 25, 25, 300);
+    rect(170, 25, 25, 300);
+    rect(210, 25, 25, 300);
       }
 delay(15);        
 }
