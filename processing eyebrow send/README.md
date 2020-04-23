@@ -3,7 +3,7 @@
 **Setup**
 
  - Download and Install FaceOSC [https://github.com/kylemcdonald/ofxFaceTracker/releases](https://github.com/kylemcdonald/ofxFaceTracker/releases)
- - On Mac, to override your security settings and open the app, find FaceOSC via Finder (and not launchpad) coontrol-click the app icon, then choose Open from the shortcut menu.
+ - On Mac, to override your security settings and open the app, find FaceOSC via Finder (and not launchpad) control-click the app icon, then choose Open from the shortcut menu.
  - Close FaceOSC temporarily
  - Download  & Install Processing: [https://processing.org/download/](https://processing.org/download/)
  -  Open Processing,
