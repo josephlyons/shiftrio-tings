@@ -2,6 +2,7 @@ import oscP5.*; //  Load OSC P5 library
 import netP5.*; //  Load net P5 library
 import mqtt.*;  // Load mqtt library
 float eyebrow;
+String EB;
 
 MQTTClient client;
 
@@ -33,7 +34,7 @@ if (theOscMessage.checkAddrPattern("/gesture/eyebrow/left")==true)
   eyebrow = firstValue; //get osc data for left eyebrow and put it into float "eyebrow"
 
   if (eyebrow > 7 && eyebrow < 8.5){  //anywhere from 7.001 to 8.49
-    client.publish("/eyebrows", "0"); //neutral
+    client.publish("/eyebrows", "0");
     background(250, 250, 0);
     rect(170, 25, 25, 300);
     } else if (eyebrow < 7) { // below 7
@@ -48,6 +49,7 @@ if (theOscMessage.checkAddrPattern("/gesture/eyebrow/left")==true)
         rect(170, 25, 25, 300);
         rect(210, 25, 25, 300);
         }
+             
 delay(15);
   }
 }

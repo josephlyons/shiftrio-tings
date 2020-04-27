@@ -26,7 +26,7 @@ void messageReceived(String &topic, String &payload)
 {
   if (topic==eyebrows)
     {
-    int Rval = payload.toInt();
+    Rval = payload.toInt();
     }
 }
 

@@ -2,18 +2,17 @@ import mqtt.*;
 
 MQTTClient client;
 
-void setup() {
+void setup() 
+{
   size(360, 360); 
   client = new MQTTClient(this);
-  client.connect("mqtt://90a85098:a7fed12984960679@broker.shiftr.io", "processing");
+  client.connect("mqtt://90a85098:a7fed12984960679@broker.shiftr.io", "processing via keys");
   
     client.publish("/eyebrows", "0");
     background(0, 0, 250);
 }
 
-void draw() 
-{
-}
+void draw() {}
 
 void keyPressed() 
 {
