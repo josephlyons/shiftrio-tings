@@ -32,11 +32,11 @@ if (theOscMessage.checkAddrPattern("/gesture/eyebrow/left")==true)
   float firstValue = theOscMessage.get(0).floatValue();
   eyebrow = firstValue; //get osc data for left eyebrow and put it into float "eyebrow"
 
-  if (eyebrow > 7 && eyebrow < 8.5){  //anywhere from 7.001 to 8.49
+  if (eyebrow > 7.3 && eyebrow < 8.5){  //anywhere from 7.001 to 8.49
     client.publish("/eyebrows", "0"); //neutral
     background(250, 250, 0);
     rect(170, 25, 25, 300);
-    } else if (eyebrow < 7) { // below 7
+    } else if (eyebrow < 7.3) { // below 7
       client.publish("/eyebrows", "2"); //frown
       background(0, 250, 0);
       rect(150, 25, 25, 300);
