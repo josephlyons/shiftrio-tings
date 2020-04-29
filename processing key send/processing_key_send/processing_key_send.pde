@@ -16,17 +16,16 @@ void draw() {}
 
 void keyPressed() 
 {
-  if (key == '1') {
-  client.publish("/eyebrows", "1");
+  if (key == '1') { //1
+  client.publish("/eyebrows", "1"); //raise 
   background(250, 250, 0);
   rect(170, 25, 25, 300);
-  } else if (key == '2') {
-    client.publish("/eyebrows", "2");
+  } else if (key == '2') { //2
+    client.publish("/eyebrows", "2"); //frown
     background(0, 250, 0);
     rect(150, 25, 25, 300);
     rect(190, 25, 25, 300);
-
-    } else if (key == '3') {
+    } else if (key == '3') { //3 //neutral
       client.publish("/eyebrows", "0");
       background(0, 0, 250);
     rect(130, 25, 25, 300);

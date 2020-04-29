@@ -20,10 +20,31 @@ background(0, 0, 250);
 oscP5 = new OscP5(this, 8338);   // Start oscP5, listening for incoming messages at port 8338 
 }
 
-void draw() {
+void draw()
+{
+  if (eyebrow > 7.3 && eyebrow < 8.5){  //anywhere from 7.3 to 8.5 = neutral
+    background(0, 0, 250);
+    rect(130, 25, 25, 300);
+    rect(170, 25, 25, 300);
+    rect(210, 25, 25, 300);
+    textSize(32);
+    text("neutral", 10, 30); 
+    fill(0, 102, 153);
+    } else if (eyebrow < 7.3) { // below 7 frown
+      background(0, 250, 0);
+      rect(150, 25, 25, 300);
+      rect(190, 25, 25, 300);
+      textSize(32);
+      text("frown", 10, 30); 
+      fill(0, 102, 153);
+      } else if (eyebrow > 8.5) { //above 8.5 raise
+        background(250, 250, 0);
+        rect(170, 25, 25, 300);
+        textSize(32);
+        text("raise", 10, 30); 
+        fill(0, 102, 153);
+         }
 }
-
-void mousePressed() {}
 
 void oscEvent(OscMessage theOscMessage) 
 {
@@ -32,25 +53,18 @@ if (theOscMessage.checkAddrPattern("/gesture/eyebrow/left")==true)
   float firstValue = theOscMessage.get(0).floatValue();
   eyebrow = firstValue; //get osc data for left eyebrow and put it into float "eyebrow"
 
-  if (eyebrow > 7.3 && eyebrow < 8.5){  //anywhere from 7.001 to 8.49
-    client.publish("/eyebrows", "0"); //neutral
-    background(250, 250, 0);
-    rect(170, 25, 25, 300);
-    } else if (eyebrow < 7.3) { // below 7
-      client.publish("/eyebrows", "2"); //frown
-      background(0, 250, 0);
-      rect(150, 25, 25, 300);
-      rect(190, 25, 25, 300);
-      } else if (eyebrow > 8.5) { //above 8.5
-        client.publish("/eyebrows", "1"); //raise
-        background(0, 0, 250);
-        rect(130, 25, 25, 300);
-        rect(170, 25, 25, 300);
-        rect(210, 25, 25, 300);
+  if (eyebrow > 7.3 && eyebrow < 8.5){  //from 7.3 to 8.5 = neutral
+    client.publish("/eyebrows", "0"); 
+    } else if (eyebrow < 7.3) { // below 7 = frown
+      client.publish("/eyebrows", "2"); 
+      } else if (eyebrow > 8.5) { //above 8.5 = raise
+        client.publish("/eyebrows", "1"); 
         }
 delay(15);
   }
 }
+  
+
   
 void clientConnected() {
   println("client connected");
